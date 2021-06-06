@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TeretanaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cenovnik">
+          <Key>
+            <PropertyRef Name="IDCena" />
+          </Key>
+          <Property Name="cena" Type="int" Nullable="false" />
+          <Property Name="tip" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDCena" Type="int" Nullable="false" />
+          <Property Name="poslednjePromene" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clan">
+          <Key>
+            <PropertyRef Name="JMBG" />
+          </Key>
+          <Property Name="Ime" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="brTelefona" Type="int" />
+          <Property Name="adresa" Type="varchar" MaxLength="30" />
+          <Property Name="email" Type="varchar" MaxLength="30" />
+          <Property Name="pol" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="JMBG" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="datumUpisa" Type="date" />
+          <Property Name="UplataClanarine" Type="date" />
+          <Property Name="DodelaTrenera" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Clanarina" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Zauzet" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Grupa" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="KorisnickoIme" />
+          </Key>
+          <Property Name="IDKorisnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImeiPrezime" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="tip" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="potvrda" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oprema">
+          <Key>
+            <PropertyRef Name="NazivOpreme" />
+          </Key>
+          <Property Name="NazivOpreme" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="cena" Type="varchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prisustvo">
+          <Key>
+            <PropertyRef Name="IDP" />
+          </Key>
+          <Property Name="IDP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDClana" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="DatumiVreme" Type="datetime" />
+          <Property Name="Promene" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Termin">
+          <Key>
+            <PropertyRef Name="IDTermina" />
+          </Key>
+          <Property Name="IDTermina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDClan" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Trener" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Datum" Type="date" />
+          <Property Name="Vreme" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Prisustvo__IDCla__70A8B9AE">
+          <End Role="clan" Type="Self.clan" Multiplicity="1" />
+          <End Role="Prisustvo" Type="Self.Prisustvo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clan">
+              <PropertyRef Name="JMBG" />
+            </Principal>
+            <Dependent Role="Prisustvo">
+              <PropertyRef Name="IDClana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Termin__IDClan__58D1301D">
+          <End Role="clan" Type="Self.clan" Multiplicity="1" />
+          <End Role="Termin" Type="Self.Termin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clan">
+              <PropertyRef Name="JMBG" />
+            </Principal>
+            <Dependent Role="Termin">
+              <PropertyRef Name="IDClan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeretanaModelStoreContainer">
+          <EntitySet Name="cenovnik" EntityType="Self.cenovnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clan" EntityType="Self.clan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="korisnik" EntityType="Self.korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oprema" EntityType="Self.Oprema" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prisustvo" EntityType="Self.Prisustvo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Termin" EntityType="Self.Termin" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Prisustvo__IDCla__70A8B9AE" Association="Self.FK__Prisustvo__IDCla__70A8B9AE">
+            <End Role="clan" EntitySet="clan" />
+            <End Role="Prisustvo" EntitySet="Prisustvo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Termin__IDClan__58D1301D" Association="Self.FK__Termin__IDClan__58D1301D">
+            <End Role="clan" EntitySet="clan" />
+            <End Role="Termin" EntitySet="Termin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeretanaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cenovnik">
+          <Key>
+            <PropertyRef Name="IDCena" />
+          </Key>
+          <Property Name="cena" Type="Int32" Nullable="false" />
+          <Property Name="tip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCena" Type="Int32" Nullable="false" />
+          <Property Name="poslednjePromene" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clan">
+          <Key>
+            <PropertyRef Name="JMBG" />
+          </Key>
+          <Property Name="Ime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="brTelefona" Type="Int32" />
+          <Property Name="adresa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="pol" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="JMBG" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="datumUpisa" Type="DateTime" Precision="0" />
+          <Property Name="UplataClanarine" Type="DateTime" Precision="0" />
+          <Property Name="DodelaTrenera" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Clanarina" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Zauzet" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Grupa" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Prisustvoes" Relationship="Self.FK__Prisustvo__IDCla__70A8B9AE" FromRole="clan" ToRole="Prisustvo" />
+          <NavigationProperty Name="Termins" Relationship="Self.FK__Termin__IDClan__58D1301D" FromRole="clan" ToRole="Termin" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="KorisnickoIme" />
+          </Key>
+          <Property Name="IDKorisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImeiPrezime" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tip" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="potvrda" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oprema">
+          <Key>
+            <PropertyRef Name="NazivOpreme" />
+          </Key>
+          <Property Name="NazivOpreme" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opis" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cena" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prisustvo">
+          <Key>
+            <PropertyRef Name="IDP" />
+          </Key>
+          <Property Name="IDP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDClana" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DatumiVreme" Type="DateTime" Precision="3" />
+          <Property Name="Promene" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="clan" Relationship="Self.FK__Prisustvo__IDCla__70A8B9AE" FromRole="Prisustvo" ToRole="clan" />
+        </EntityType>
+        <EntityType Name="Termin">
+          <Key>
+            <PropertyRef Name="IDTermina" />
+          </Key>
+          <Property Name="IDTermina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDClan" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trener" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Precision="0" />
+          <Property Name="Vreme" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="clan" Relationship="Self.FK__Termin__IDClan__58D1301D" FromRole="Termin" ToRole="clan" />
+        </EntityType>
+        <Association Name="FK__Prisustvo__IDCla__70A8B9AE">
+          <End Role="clan" Type="Self.clan" Multiplicity="1" />
+          <End Role="Prisustvo" Type="Self.Prisustvo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clan">
+              <PropertyRef Name="JMBG" />
+            </Principal>
+            <Dependent Role="Prisustvo">
+              <PropertyRef Name="IDClana" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Termin__IDClan__58D1301D">
+          <End Role="clan" Type="Self.clan" Multiplicity="1" />
+          <End Role="Termin" Type="Self.Termin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clan">
+              <PropertyRef Name="JMBG" />
+            </Principal>
+            <Dependent Role="Termin">
+              <PropertyRef Name="IDClan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeretanaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cenovniks" EntityType="Self.cenovnik" />
+          <EntitySet Name="clans" EntityType="Self.clan" />
+          <EntitySet Name="korisniks" EntityType="Self.korisnik" />
+          <EntitySet Name="Opremas" EntityType="Self.Oprema" />
+          <EntitySet Name="Prisustvoes" EntityType="Self.Prisustvo" />
+          <EntitySet Name="Termins" EntityType="Self.Termin" />
+          <AssociationSet Name="FK__Prisustvo__IDCla__70A8B9AE" Association="Self.FK__Prisustvo__IDCla__70A8B9AE">
+            <End Role="clan" EntitySet="clans" />
+            <End Role="Prisustvo" EntitySet="Prisustvoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Termin__IDClan__58D1301D" Association="Self.FK__Termin__IDClan__58D1301D">
+            <End Role="clan" EntitySet="clans" />
+            <End Role="Termin" EntitySet="Termins" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeretanaModelStoreContainer" CdmEntityContainer="TeretanaEntities">
+          <EntitySetMapping Name="cenovniks">
+            <EntityTypeMapping TypeName="TeretanaModel.cenovnik">
+              <MappingFragment StoreEntitySet="cenovnik">
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="IDCena" ColumnName="IDCena" />
+                <ScalarProperty Name="poslednjePromene" ColumnName="poslednjePromene" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clans">
+            <EntityTypeMapping TypeName="TeretanaModel.clan">
+              <MappingFragment StoreEntitySet="clan">
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="brTelefona" ColumnName="brTelefona" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="pol" ColumnName="pol" />
+                <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+                <ScalarProperty Name="datumUpisa" ColumnName="datumUpisa" />
+                <ScalarProperty Name="UplataClanarine" ColumnName="UplataClanarine" />
+                <ScalarProperty Name="DodelaTrenera" ColumnName="DodelaTrenera" />
+                <ScalarProperty Name="Clanarina" ColumnName="Clanarina" />
+                <ScalarProperty Name="Zauzet" ColumnName="Zauzet" />
+                <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korisniks">
+            <EntityTypeMapping TypeName="TeretanaModel.korisnik">
+              <MappingFragment StoreEntitySet="korisnik">
+                <ScalarProperty Name="IDKorisnika" ColumnName="IDKorisnika" />
+                <ScalarProperty Name="ImeiPrezime" ColumnName="ImeiPrezime" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="potvrda" ColumnName="potvrda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opremas">
+            <EntityTypeMapping TypeName="TeretanaModel.Oprema">
+              <MappingFragment StoreEntitySet="Oprema">
+                <ScalarProperty Name="NazivOpreme" ColumnName="NazivOpreme" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prisustvoes">
+            <EntityTypeMapping TypeName="TeretanaModel.Prisustvo">
+              <MappingFragment StoreEntitySet="Prisustvo">
+                <ScalarProperty Name="IDP" ColumnName="IDP" />
+                <ScalarProperty Name="IDClana" ColumnName="IDClana" />
+                <ScalarProperty Name="DatumiVreme" ColumnName="DatumiVreme" />
+                <ScalarProperty Name="Promene" ColumnName="Promene" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Termins">
+            <EntityTypeMapping TypeName="TeretanaModel.Termin">
+              <MappingFragment StoreEntitySet="Termin">
+                <ScalarProperty Name="IDTermina" ColumnName="IDTermina" />
+                <ScalarProperty Name="IDClan" ColumnName="IDClan" />
+                <ScalarProperty Name="Trener" ColumnName="Trener" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Vreme" ColumnName="Vreme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

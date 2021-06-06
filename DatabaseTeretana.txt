@@ -1,0 +1,80 @@
+create database Teretana;
+
+create table [Teretana].[dbo].[clan]
+(
+Ime varchar(15)  not null,
+Prezime varchar(15)  not null,
+brTelefona int,
+adresa varchar (30) null,
+email varchar(30) null,
+pol char(1)  default 'M' check (pol in ('M', 'Ž')) not null ,
+JMBG varchar(13) not null primary key,
+datumUpisa date,
+UplataClanarine date,
+DodelaTrenera char(2) default 'DA' check (DodelaTrenera in ('DA', 'NE')) not null,
+Clanarina varchar(8) not null,
+Zauzet char(2) default 'DA' check (Zauzet in ('DA', 'NE')) not null,
+Grupa char(2) default 'DA' check (Grupa in ('DA', 'NE')) not null,
+);
+
+
+
+CREATE TABLE[Teretana].[dbo].[Termin](
+IDTermina int IDENTITY(1,1) primary key,
+IDClan varchar(13) not null,
+Trener varchar(30) not null,
+Datum date,
+Vreme varchar(20) not null,
+foreign key (IDClan) references clan(JMBG),
+);
+
+
+CREATE TABLE[Teretana].[dbo].[Prisustvo](
+IDP int IDENTITY(1,1) primary key not null,
+IDClana varchar(13) not null,
+DatumiVreme datetime,
+Promene varchar(6) default 'ULAZ' check (Promene in ('ULAZ', 'IZLAZ')) not null,
+foreign key (IDClana) references clan(JMBG)
+);
+
+
+create table[Teretana].[dbo].[cenovnik]
+(
+cena int not null,
+tip varchar(10) not null,
+IDCena int primary key not null, 
+poslednjePromene varchar(15) not null
+);
+
+
+create table [Teretana].[dbo].[korisnik]
+(
+IDKorisnika int IDENTITY(1,1) not null,
+ImeiPrezime varchar(30) unique not null,
+KorisnickoIme varchar(30) primary key  not null,
+Lozinka varchar(30) not null,
+tip char(1) default 'R' check (tip in ('R','T','A')) not null,
+potvrda char(2) default 'DA' check (potvrda in ('DA','NE')) not null
+);
+
+
+CREATE TABLE [Teretana].[dbo].[Oprema](
+NazivOpreme varchar(30) primary key not null,
+opis varchar(400) not null,
+cena varchar(70) not null);
+
+
+INSERT INTO [Teretana].[dbo].[korisnik](ImeiPrezime,KorisnickoIme,Lozinka,tip,potvrda)VALUES('Admin','admin','admin','A','DA');
+INSERT INTO [Teretana].[dbo].[korisnik](ImeiPrezime,KorisnickoIme,Lozinka,tip,potvrda)VALUES('Radnik','user','user','R','DA');
+
+
+INSERT INTO cenovnik(cena,tip,IDCena,poslednjePromene)VALUES(100,'MG',1,'05/24/2021');
+INSERT INTO cenovnik(cena,tip,IDCena,poslednjePromene)VALUES(200,'MI',2,'05/24/2021');
+INSERT INTO cenovnik(cena,tip,IDCena,poslednjePromene)VALUES(1000,'GT',3,'05/24/2021');
+INSERT INTO cenovnik(cena,tip,IDCena,poslednjePromene)VALUES(1500,'IT',4,'05/24/2021');
+
+
+//U klasi Base.cs promeniti data source. 
+
+
+

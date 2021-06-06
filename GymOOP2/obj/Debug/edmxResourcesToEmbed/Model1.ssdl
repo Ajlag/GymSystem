@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GymOOP2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="EID" />
+    </Key>
+    <Property Name="EID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EquipName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="EDescription" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="MUsed" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="DDate" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Cost" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewMember">
+    <Key>
+      <PropertyRef Name="MID" />
+    </Key>
+    <Property Name="MID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jmbg" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Dob" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Mobile" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="JoinDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gymtime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Maddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MembershipTime" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pricelist">
+    <Key>
+      <PropertyRef Name="IDPrice" />
+    </Key>
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="TypeP" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IDPrice" Type="int" Nullable="false" />
+    <Property Name="RecentChanges" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GymOOP2ModelStoreContainer">
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewMember" EntityType="Self.NewMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pricelist" EntityType="Self.Pricelist" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GymOOP2ModelStoreContainer" CdmEntityContainer="GymOOP2Entities1">
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="GymOOP2Model.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="EquipName" ColumnName="EquipName" />
+          <ScalarProperty Name="EDescription" ColumnName="EDescription" />
+          <ScalarProperty Name="MUsed" ColumnName="MUsed" />
+          <ScalarProperty Name="DDate" ColumnName="DDate" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewMembers">
+      <EntityTypeMapping TypeName="GymOOP2Model.NewMember">
+        <MappingFragment StoreEntitySet="NewMember">
+          <ScalarProperty Name="MID" ColumnName="MID" />
+          <ScalarProperty Name="jmbg" ColumnName="jmbg" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+          <ScalarProperty Name="Gymtime" ColumnName="Gymtime" />
+          <ScalarProperty Name="Maddress" ColumnName="Maddress" />
+          <ScalarProperty Name="MembershipTime" ColumnName="MembershipTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pricelists">
+      <EntityTypeMapping TypeName="GymOOP2Model.Pricelist">
+        <MappingFragment StoreEntitySet="Pricelist">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TypeP" ColumnName="TypeP" />
+          <ScalarProperty Name="IDPrice" ColumnName="IDPrice" />
+          <ScalarProperty Name="RecentChanges" ColumnName="RecentChanges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

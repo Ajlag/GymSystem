@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TeretanaModelStoreContainer" CdmEntityContainer="TeretanaEntities">
+    <EntitySetMapping Name="cenovniks">
+      <EntityTypeMapping TypeName="TeretanaModel.cenovnik">
+        <MappingFragment StoreEntitySet="cenovnik">
+          <ScalarProperty Name="cena" ColumnName="cena" />
+          <ScalarProperty Name="tip" ColumnName="tip" />
+          <ScalarProperty Name="IDCena" ColumnName="IDCena" />
+          <ScalarProperty Name="poslednjePromene" ColumnName="poslednjePromene" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clans">
+      <EntityTypeMapping TypeName="TeretanaModel.clan">
+        <MappingFragment StoreEntitySet="clan">
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="brTelefona" ColumnName="brTelefona" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pol" ColumnName="pol" />
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="datumUpisa" ColumnName="datumUpisa" />
+          <ScalarProperty Name="UplataClanarine" ColumnName="UplataClanarine" />
+          <ScalarProperty Name="DodelaTrenera" ColumnName="DodelaTrenera" />
+          <ScalarProperty Name="Clanarina" ColumnName="Clanarina" />
+          <ScalarProperty Name="Zauzet" ColumnName="Zauzet" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="korisniks">
+      <EntityTypeMapping TypeName="TeretanaModel.korisnik">
+        <MappingFragment StoreEntitySet="korisnik">
+          <ScalarProperty Name="IDKorisnika" ColumnName="IDKorisnika" />
+          <ScalarProperty Name="ImeiPrezime" ColumnName="ImeiPrezime" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="tip" ColumnName="tip" />
+          <ScalarProperty Name="potvrda" ColumnName="potvrda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opremas">
+      <EntityTypeMapping TypeName="TeretanaModel.Oprema">
+        <MappingFragment StoreEntitySet="Oprema">
+          <ScalarProperty Name="NazivOpreme" ColumnName="NazivOpreme" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="cena" ColumnName="cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prisustvoes">
+      <EntityTypeMapping TypeName="TeretanaModel.Prisustvo">
+        <MappingFragment StoreEntitySet="Prisustvo">
+          <ScalarProperty Name="IDP" ColumnName="IDP" />
+          <ScalarProperty Name="IDClana" ColumnName="IDClana" />
+          <ScalarProperty Name="DatumiVreme" ColumnName="DatumiVreme" />
+          <ScalarProperty Name="Promene" ColumnName="Promene" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Termins">
+      <EntityTypeMapping TypeName="TeretanaModel.Termin">
+        <MappingFragment StoreEntitySet="Termin">
+          <ScalarProperty Name="IDTermina" ColumnName="IDTermina" />
+          <ScalarProperty Name="IDClan" ColumnName="IDClan" />
+          <ScalarProperty Name="Trener" ColumnName="Trener" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Vreme" ColumnName="Vreme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
