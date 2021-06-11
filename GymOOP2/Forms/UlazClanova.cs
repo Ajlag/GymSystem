@@ -46,6 +46,7 @@ namespace GymOOP2
                 {
                     if (dt.Rows.Count == 1)
 
+
                     {
                         var UplataClanarine = Base.PrikaziClanarinu(textBox1.Text).ToString();
                         DateTime uplataClanarine = Base.PrikaziClanarinu(textBox1.Text);
