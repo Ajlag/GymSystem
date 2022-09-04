@@ -95,3 +95,41 @@ C:\Users\Ajla\Desktop\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.AdminForma.resourc
 C:\Users\Ajla\Desktop\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PrikaziRadnike.resources
 C:\Users\Ajla\Desktop\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PrikazTrenera.resources
 C:\Users\Ajla\Desktop\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PotvrdiRadnika.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\GymOOP2.exe.config
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.exe
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.pdb
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\GymOOP2.exe
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\GymOOP2.pdb
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\EntityFramework.dll
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\EntityFramework.xml
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.csprojResolveAssemblyReference.cache
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.AdminForma.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.LoginClan.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.Registracija.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.Trener1.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.UlazKartice.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.DnevnaClanarina.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.IstekClanarine.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.MesecneClanarine.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UlazClanova.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Cenovnik.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.PregledOpreme.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Clanovi.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.ChangePassword.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Login.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Forms.Main1.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.Properties.Resources.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.Equipment11.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.Grupa.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.Individualni.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PotvrdiRadnika.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PrikaziRadnike.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PrikazTrenera.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.PrisustvoClanova.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.SearchMember.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.ZakazaniTermini.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.UserControl1.Zauzet.resources
+C:\Users\Ajla\Desktop\Zavrseni projekti\GymOOP2\GymOOP2\obj\Debug\GymOOP2.csproj.GenerateResource.Cache
